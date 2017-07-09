@@ -1,0 +1,61 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="container">
+		<form method="post">
+			
+			<div class="row">
+				<div class="col-md-7">
+					<div class="form-group {{ Name_color }}">
+						<label class="control-label" for="name">Name:</label>
+						<input type="text" name="username" value="{{ name }}" class="form-control input-lg" placeholder="Enter name">
+						<p class="help-block">{{ Name_Error }}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-7">
+					<div class="form-group {{ Password_color }}">
+						<label class="control-label" for="password">Password:</label>
+						<input type="password" name="password" value="{{ password }}" placeholder="Enter password" class="form-control">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-7">
+					<div class="form-group {{ Password_color }}">
+						<label class="control-label" for="verify">Verify:</label>
+						<input type="password" name="verify" value="{{verify}}" placeholder="Verify your password" class="form-control">
+						<p class="help-block">{{ Password_Error }}</p>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-7">
+					<div class="form-group has-success">
+						<label class="control-label" for="email">Email(optional):</label>
+						<input type="text" name="email" value="{{email}}" placeholder="Enter email" class="form-control">
+					</div>
+
+				</div>
+			</div>
+			
+			<input type="submit" name="submit" class="btn btn-success btn-lg">
+
+		</form>
+				
+	</div>
+			
+
+
+{% endblock %}
+
+

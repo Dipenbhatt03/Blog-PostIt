@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="well">
+	
+		{% for post in posts %}
+			<tr>
+				<a href="/blog/{{post.key.id()}}" style="text-decoration: none;color: black;"><h2>{{post.subject}}</h2>
+				</a>
+				<p class="help-block">posted on {{post.created}}</p>
+			</tr>
+
+			
+			<tr>
+				{{post.content}}
+			</tr>
+			<hr>
+		{% endfor %}
+
+		
+</div>
+
+	
+	
+{% endblock %}

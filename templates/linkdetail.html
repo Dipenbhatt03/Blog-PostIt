@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+
+	
+	
+	<div class="container">
+		<div class="jumbotron">
+			
+
+			<div class="row" id="post-subject">
+				<div class="col-md-6">
+						<h2>{{post.subject}}</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8">
+					<p class="help-block" style="font-size: 15px;">
+						Created on {{ post.created }}
+					</p>
+				</div>
+			</div>
+			<div class="well" >
+					{{ post.content }}
+					<hr>
+					<p class="help-block" style="font-size: ">
+						Posted by {{ post.user.get().name }}
+					</p>
+			</div>
+
+			<div>
+				<form class="form-horizontal" method="post">
+					<div class="row">
+				      <div class="col-xs-6">
+				      	<textarea class="form-control" rows="3" name="comment" placeholder="Add your comment here.."></textarea>
+				      </div>
+				     </div>
+				     <p class="help-block">{{ error }}</p>
+				     <br>
+				    <input type="submit" name="submit" value="Comment" class="btn btn-success btn-lg">
+				</form>
+			</div>
+
+			<br>
+			<br>
+			<br>
+
+
+			<div class="container">
+				{% for comment in post.comments %}
+					<div class="row">
+						<a href="#">{{ comment.get().user.get().name }}</a>
+						<br>
+						<br>
+
+						{{ comment.get().body }}	
+					</div>
+				{% endfor %}
+				
+			</div>
+			
+
+			
+		</div>
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+#nav
+{
+overflow:auto;
+}
+#nav ul
+{
+list-style:none;
+height:30px;
+padding:0px;
+margin:0px;
+}
+#nav ul li
+{
+	float: left;
+	padding: 10px;	
+}
+</style>
+
+
+
+</head>
+<body>
+
+<header>
+	<div class="jumbotron">
+		<div class="container">
+			<b><h1> PostIt</h1></b>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+
+
+	<div class="nav">
+		<div id="nav">
+			<ul>
+				<li><a href="/blog">Home</a></li>
+				<li><a href="/blog/newpost">Newpost</a></li>
+				<li><a href="/signup">Signup</a></li>
+				<li><a href="{{ link }}">{{ acount }}</a></li>
+				
+			</ul>
+			
+		</div>
+
+	</div>
+</div>
+
+
+
+<div class="container">
+	{% block content %}
+	{% endblock %}
+</div>
+
+<footer class="container">
+	<br>
+	<br>
+
+	{% if logged %}	
+		Logged in as <a href="#">{{ acount_name }}</a>
+	{% endif %}
+	<hr>
+	<br>
+	<br>
+	
+	
+	Created in app engine by Dipendra Bhatt
+</footer>
+</div>
+</body>
+</html>
